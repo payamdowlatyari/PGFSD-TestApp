@@ -1,0 +1,42 @@
+<div class="container">
+    <h2 class="header">Angular Quiz App</h2>
+    <div class="card horizontal">
+        <div class="card-image"><br>
+            <img src="../../../assets/img/login.jpg" width="400" height="200">
+        </div>
+        <form #registerForm="ngForm" (ngSubmit)="OnSubmit(Name.value)" (change)="onItemChange($event.target.value)">
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input type="text" name="Name" #Name ngModel required>
+
+                    <label>Name</label>
+                </div>
+                <div class="col s12">
+                    <h6>Select Difficulty</h6>
+                    <label>
+                        <input value="easy" name="group1" type="radio" />
+                        <span>Easy</span>
+                    </label><br>
+                    <label>
+                        <input value="medium" name="group1" type="radio" />
+                        <span>Medium</span>
+                    </label><br>
+                    <label>
+                        <input value="hard" name="group1" type="radio" />
+                        <span>Hard</span>
+                    </label><br>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <button class="waves-effect waves-light btn" type="submit" [disabled]="!registerForm.valid">Start
+                        <i class="material-icons right">send</i></button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
